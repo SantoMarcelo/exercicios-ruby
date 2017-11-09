@@ -7,6 +7,7 @@ class Lista
         @Lista << contato
     end
 
+
     def mostra
         for contato in @Lista
            puts "#######################################"
@@ -157,16 +158,22 @@ until resposta  == 2 do
     3 - telefone
     4 - endereco"
     opcao = STDIN.gets.to_i
+
+    puts opcao
         if opcao == 1 
              #altera nome
             "Informe o nome do Contato"
             altera_nome = STDIN.gets
 
-            lista_contato.each do |item|
+            
+
+           lista_contatos.each do |item|
                 if item[:nome] == pesquisa_contato
                 item[:nome] = altera_nome
+                puts "dentro do if"
             end
-        end
+                puts "fora do if"
+            end
 
             lista_contato.mostra
         elsif opcao == 2
@@ -175,7 +182,7 @@ until resposta  == 2 do
             #altera telefone
         elsif opcao ==4
             #altera endereço
-        else
+    else
             "opção invalida."
         end
    
